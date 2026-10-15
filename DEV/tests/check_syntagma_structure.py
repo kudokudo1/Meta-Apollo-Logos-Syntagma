@@ -13,10 +13,10 @@ for name in REQUIRED:
     if not (ROOT / name).is_file():
         errors.append(f"missing required file: {name}")
 
-links = re.compile(r"!?\\[[^\\]]*\\]\\(([^)]+)\\)")
+links = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 for md in ROOT.rglob("*.md"):
     for raw in links.findall(md.read_text(encoding="utf-8")):
-        raw = raw.strip().split(" \\\"", 1)[0]
+        raw = raw.strip().split(" ", 1)[0]
         if not raw or raw.startswith(("#", "http:", "https:", "mailto:", "data:")):
             continue
         file_part = raw.split("#", 1)[0].split("?", 1)[0]
