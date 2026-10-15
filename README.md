@@ -32,6 +32,6 @@ Syntagma defines **how humans and AI workers collaborate across the Meta Apollo 
 
 ### ⌯✦ PROCESS // SAFE SEPARATION
 
-This is the **new Syntagma authority location**. The former shared-rules copy inside `Meta-Apollo-Logos-How-I-Think` remains intact as migration provenance while existing project links are reconciled. Do not interpret mirrored files as two independently maintained rule authorities. Do not remove How I Think's cognitive map, evidence, or historical archive.
+This repository is the **canonical Syntagma rule authority**. The former shared-rule files in `Meta-Apollo-Logos-How-I-Think` now contain compatibility pointers, not parallel maintained rules; the original content survives in Git history and the archived source map. Member repository READMEs have been updated to point here where completed. The personal cognitive model, evidence, and archaeology remain in their original owning repositories.
 
 > **Skim first. Descend only when the task needs deeper context.**
