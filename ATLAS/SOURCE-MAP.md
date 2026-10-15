@@ -34,9 +34,9 @@ Rule ownership is distinct from *source evidence*. An observed runtime issue is 
 
 ## 3 // ORIGIN AND TRANSITION (OCTOBER 15, 2026)
 
-The [former Syntagma workstream inside How I Think](https://github.com/kudokudo1/Meta-Apollo-Logos-How-I-Think/blob/main/ATLAS/SOURCE-MAP.md) owned the pre-split AGENTS, OPERATE and ATLAS sources. This dedicated repository copies their then-current shared-rule content and inherited SVG chassis, while revising the entry points and personal-model links to clarify ownership.
+The [pre-split Syntagma workstream archived source map](https://github.com/kudokudo1/Meta-Apollo-Logos-How-I-Think/blob/main/ARCHIVE/2026-10-15-pre-split-syntagma-source-map.md) documents the original AGENTS, OPERATE and ATLAS sources. This dedicated repository transferred their then-current shared-rule content and inherited SVG chassis, while revising entry points and personal-model links to clarify ownership.
 
-No personal cognitive map, dump, or first-person evidence was imported here. Old links and old repository files remain readable pending coordinated redirects. This is an **additive transfer**; it does not authorize uncontrolled deletion, historical rewriting, or changes to another active worker's owned files.
+No personal cognitive map, dump, or first-person evidence was imported. Old How I Think AGENTS/OPERATE links remain readable through small compatibility pointers to this Syntagma; the original complete text remains recoverable from Git history. Family README references have been updated independently. This migration does not authorize unrelated deletion or changes to an active worker's files.
 
 **Source checkout:** `Meta-Apollo-Logos-How-I-Think` main at the Oct 15 split. For changes after separation, edit this canonical Syntagma repository and route other project pointers here. Use explicit compat notices rather than editing two copies as competing authorities.
 
