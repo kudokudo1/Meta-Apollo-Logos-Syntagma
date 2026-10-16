@@ -147,6 +147,30 @@ When the requested task is coherent, verified, and preserves extension paths, st
 
 > **Preserve the next branch without forcing it to become today's implementation.**
 
+## 11 // QUESTION INTENT: FUNDAMENTALS FOR WHAT, ACTIONS FOR HOW
+
+**STATE //** operator-directed collaboration rules, October 16, 2026. These specify *how to answer*, not a new Git, UI, or computer implementation contract.
+
+### WHAT / WHAT IS IT DOING / WHY // EXPLAIN THE FUNDAMENTAL MECHANISM
+
+Start with what actually exists and happens: data or bytes, code or files, processes, memory, storage, computers, networks, commands, inputs, outputs, and changes in state. Explain **what is read, sent, received, stored, executed, or changed; by what; where; and why**, as appropriate to the question.
+
+Do **not** substitute app-specific labels, metaphors, or developer vocabulary for the mechanism. For example, explain code/data being sent to and stored on another computer before discussing Git's terms for the saved history. Introduce terms such as `branch`, `commit`, or `upstream` *after* the physical/logical operation is understood, and only when useful.
+
+**Keep the simplification accurate.** Do not claim an entire file moves if the actual transfer consists of stored objects, changes, or references. Separate underlying computing behavior from how one application names or organizes it.
+
+### HOW / HOW DO I FIX IT // GIVE THE ACTUAL ACTIONS
+
+Start with the shortest **verified** action path, not a tour of abstractions:
+
+1. **Existing Post-Apollo control first:** give the exact menu, control, click, and confirmation sequence if the current UI actually supports the operation. Do not send the operator to GitHub's website or the terminal to perform an action already available through that menu.
+2. **Otherwise, exact commands:** when a terminal is needed, give commands in executable order and identify where to enter them. Do not replace the procedure with a conceptual Git lesson.
+3. **Necessary safety checks, with the reason:** when the action risks overwriting, losing, or breaking work, show essential preflight commands (for example, `git status` and `git fetch` when relevant), explain what each checks or retrieves, and state which failure the check helps prevent. Do not add diagnostics as ceremony when they do not affect safety.
+4. **Identify the action that does the work:** clearly distinguish preparatory checks from the actual click or command that changes the system; say precisely what that action changes.
+5. **Verify the outcome:** give a practical confirmation check. Do not confuse an executed command, automated check, visible UI state, and the operator's final acceptance.
+
+Do not invent UI controls, assume an unverified menu feature exists, or promise a fix before inspecting the risk-relevant state. Provide deeper rationale when requested or needed to make the action safe.
+
 ## DEEPER SOURCES
 
 - [HOW-I-THINK-PUBLIC.md](https://github.com/kudokudo1/Meta-Apollo-Logos-How-I-Think/blob/main/HOW-I-THINK-PUBLIC.md)
