@@ -157,6 +157,44 @@ This shared operator-level rule governs relational color meaning; the [Post-Apol
 
 Preserve front/back glow order, separate text shadows, font-size differences, transparent positioning and stage-specific color treatment. If the glyph appears wrong, test the rendering instead of assuming its Unicode or decoration was mistaken.
 
+### 8.0 // SOURCE-ALIGNED GLYPH GLOW
+
+**Rule (operator-approved 2026-10-22):** A glow that samples a text glyph,
+icon or decorated artwork must stay aligned with the **same rendered source**
+through size/text changes, hover/selection, animation, opening/closing and
+source destruction. A visibly displaced or duplicated second silhouette is
+a rendering defect, not a new style or an accepted default.
+
+- Shared control families must implement this alignment **by default** for
+  ordinary content. Do not require every widget author to rediscover or
+  opt into a known positioning repair.
+- Preserve intentional *separate* color identities, text/halo planes, font
+  composition, glow strength and interaction states. Fix coordinates and
+  source ownership before dimming, recoloring, replacing or flattening
+  authored artwork.
+- Effects must not sample themselves, and detached source samplers must
+  disconnect safely when their source/window disappears. Source-local effects
+  and separate guarded samplers may both be valid: use the verified method
+  appropriate to a specific rendering surface.
+- Exceptional multi-part or animated artwork must declare and verify its
+  placement/lifecycle exception explicitly; an exception is not permission
+  for accidental double rendering elsewhere.
+- Protect the rule with source-level regression checks **and** targeted Qt
+  geometry/lifecycle tests where feasible. Static assertions do not alone
+  certify the user's live Qt/Wayland/GPU rendering.
+
+**Implementation ownership:** numerical effects, QML component geometry,
+`SafeDropShadow`, `TextHashGlow`, and the staged `ActionButton` /
+`ModeButton` / `DockButton` rollout belong to
+[Post-Apollo visual-language recipes](https://github.com/kudokudo1/The-Post-Apollo-Project/blob/main/MODEL/components/visual-language-recipes.md).
+The previously documented Wi-Fi source-local glow repair remains a
+verified exception pending independent parity testing; do not silently
+revert it to detached overlays.
+
+**Provenance:** operator reports and bounded visual repairs on AppControl,
+CPU++, GitHub Projects, Apollo Hub, and Finance, followed by the explicit
+request to prevent recurrence in the shared components.
+
 ### 8.1 // RELATIONAL COLOR CLASSIFICATION
 
 Color identifies a **relationship in context**, not a fixed noun, selector depth, or obligation that adjacent buttons differ. First classify the referent, scope (whole, subsystem, action, display), emphasized relationship, persistence through interaction, and established precedent. Related terms need not share colors; different controls expressing the same relationship may share them.
