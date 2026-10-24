@@ -135,6 +135,25 @@ Widgets should occupy **only the usable space required** for readable, operable 
 
 Future per-monitor adaptation must use actual monitor/work-area geometry without page-dependent jumping, preserve readable controls and existing relationships, and does not automatically revoke the current 50px baseline. No universal numeric scaling or breakpoint table is established here.
 
+### Shared visible top-edge reference // 9 px
+
+**Status:** operator-directed alignment target, documented 2026-10-24; repository-source alignment is implemented, but live compositor pixel measurements and final visual acceptance remain separate. **Owner:** Syntagma owns this shared visual rule; [Post-Apollo's widget QML and alignment tests](https://github.com/kudokudo1/The-Post-Apollo-Project/blob/main/tests/components/test_widget_top_edge_alignment_contracts.py) own the technical implementation and source checks.
+
+For the established dock-opened overlay widgets, align the **visible outer chassis/frame top border to 9 logical pixels below the top of its assigned output**, not 9px below the bar or its 50px dock button. This source-coordinate reference currently covers **FinanceW in Compact mode, HospitalW, GitW, TasksW/To-Do, TimeW (including its MACHINE/Time Machine view), and MediaDeckW/Hi-Fi**. Keep each widget's own width, height, lateral placement, existing focus/lifecycle contract, and dock-button position. FinanceW's Expanded/Fullscreen modes and unrelated specialty/appliance surfaces are not silently brought under the compact top rule.
+
+**Position the visible border, not just the Wayland window:** for an output-top-anchored panel, `visible_top_y = window_top_margin + inner_frame_top_inset` in the same logical coordinate system. Current Post-Apollo source uses more than one equivalent arrangement:
+
+| Surface | Window top margin | Visible-frame top inset | Resulting visible top |
+| --- | ---: | ---: | ---: |
+| FinanceW Compact, HospitalW, GitW, TasksW, TimeW | 0px | 9px | **9px** |
+| MediaDeckW / Hi-Fi | 9px | 0px (frame fills its window) | **9px** |
+
+These are **reference source values**, not evidence that every physical monitor currently displays an exact nine-pixel gap. A transparent window gutter, shadow/glow allowance, frame `anchors.topMargin`, and layer-shell `margins.top` are distinct; do not accidentally add them twice. For instance, `top: 0` can still leave a 9px visible gap, while reintroducing TimeW's older 8px window margin in addition to an inner inset would misalign it.
+
+When the operator says **"at the top"** or **"no gap"**, do not preserve an unexplained default margin: report the *actual visible border target* and any deliberate glow allowance. The current accepted **source-placement experiment uses 9px**, not physical `y = 0`; do not relabel those coordinates as identical. If the operator later approves flush-to-edge placement, change the shared target explicitly rather than quietly making individual widgets inconsistent again. Verify on the intended Sway output with real scale, compositor/work-area offsets, and a visible border comparison before claiming live alignment.
+
+**Provenance:** operator's incremental FinanceW 12→10→9px top-edge placement experiment ([PR #693](https://github.com/kudokudo1/The-Post-Apollo-Project/pull/693)), followed by the five-widget consistency change ([PR #695](https://github.com/kudokudo1/The-Post-Apollo-Project/pull/695)). A source contract passing, or a PR being merged, does not alone certify live visual acceptance.
+
 ## Attachment, simultaneous visibility and stacking
 
 Place widgets near their owning module/dock region and usable desktop/window-work-area edges, respecting configured Sway gaps, reserved bar area, monitor differences and room for normal app windows such as Kitty.
