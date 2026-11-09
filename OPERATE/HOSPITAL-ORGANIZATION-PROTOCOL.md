@@ -107,6 +107,12 @@ Nurses handle maintenance: cleanup, bug fixes, Meta Apollo synchronization/consi
 
 Doctors perform normal implementation, repair, testing, and development under their Room Assignments. There may be many Doctors on many Teams. Their Team affiliation does not make them a Team-level Head Surgeon, Manager, or source of unbounded permissions.
 
+### STAFFING INVARIANT // REVIEWS DO NOT REASSIGN
+
+`DOC` remains responsible for its implementation Assignment while conducting tests, reading Nurse reports or temporarily reviewing a parallel worker's code. `NRS` owns only the maintenance/verification Assignment actually allocated to that Nurse. Neither a review request nor a receiving report reassigns a worker, and an **outgoing Nurse audit** must not be interpreted as an **incoming Doctor replacement**.
+
+For parallel development, distinguish the receiving worker's **primary owned lane** from another worker's **dependency lane**. A gate on the dependency lane calls for coordination, not automatic conversion of the primary Doctor into the dependency's verifier. Preserve both Room checkpoints, owners, branches and acceptance gates; escalate any real overlap. Role and scope changes require explicit operator authority or verified Hospital staffing actions.
+
 ### PROXY DOCTOR // PXD
 
 **Proxy Doctor** is the operator-selected official name for a construction-oriented AI acting as an **extension of its creator's agency**. The defining relationship is:
