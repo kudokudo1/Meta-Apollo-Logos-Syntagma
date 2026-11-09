@@ -162,6 +162,20 @@ The semantic distinction is:
 
 Room and Assignment are related but are not synonyms.
 
+## 6A // STAFF ROLE CONTINUITY IS ASSIGNMENT-BASED
+
+**A worker's staff role and implementation mandate come from the operator-authorized Room Assignment and verified succession record, not from the most recent chat summary or report.** A browser ChatGPT worker defaults to Hospital-compatible ordinary Doctor (`DOC`) work unless an explicit authorized assignment specifies another role. The generic word "doctor" in this protocol does not change an explicit role.
+
+Before resuming with `CONTINUE`, or after a handoff, recover the **incoming** role, primary development objective, owned files/seams, parallel worker ownership, latest checkpoint and permissions. Do not mistake a report's **author**, outgoing auditor, specialist consultant, or temporary verification hat for the incoming worker's role. In particular, `OUTGOING REVIEW // Nurse 2` is not `INCOMING STAFF ROLE // NRS`.
+
+A Doctor can inspect CI, review a dependency, request Nurse verification and report blockers **without becoming a Nurse or abandoning development**. Finishing a review or reaching a dependency gate does not complete the underlying implementation assignment. Do not silently narrow a Doctor's job to "verification standby" when their development scope remains open.
+
+When multiple Rooms advance in parallel, preserve the independent assignment, owner and branch for **each** lane. A blocked or high-interest dependency does not merge two Rooms into one or automatically transfer file ownership. At a boundary, report the dependency, then continue safe, non-colliding work in the original lane. If that lane genuinely cannot progress, explicitly identify the blocker and remaining work rather than inventing a new role.
+
+**Role or assignment changes require the operator's explicit reassignment or a verified authorized Hospital update.** If past summaries conflict with the original work contract, flag the discrepancy and restore the authoritative contract before editing. A chat/session name and its earlier self-assigned label are not role-change authority. No rule here overrides separate approval for production activation, host mutation or merging.
+
+---
+
 ## 7 // HOSPITAL QUICK-COMMAND VOCABULARY
 
 Browser doctors should understand the existing Hospital shorthand:
