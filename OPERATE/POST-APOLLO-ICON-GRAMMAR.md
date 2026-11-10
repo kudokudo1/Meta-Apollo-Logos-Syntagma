@@ -195,6 +195,60 @@ revert it to detached overlays.
 CPU++, GitHub Projects, Apollo Hub, and Finance, followed by the explicit
 request to prevent recurrence in the shared components.
 
+### 8.0A // MENU REOPEN MUST NOT CHANGE A BUTTON'S SEMANTIC FILL
+
+> **STATUS //** operator-requested rule proposal, 2026-11-10;
+> pending icon/symbol-grammar owner (Nurse 3a) review and final operator acceptance.
+> **SCOPE //** interactive controls that can be hidden/reopened, especially
+> list delegates and small category/menu filter buttons.
+> **SOURCE //** Clock → Angels paint fixes (`AngelActionButton.qml`;
+> commits `b9ba97f`, `12e129b`, `b2264a0`) and the operator's
+> Favorites++ reopen screenshot. The latter fix is staged in
+> [Favorites++ PR #1740](https://github.com/kudokudo1/The-Post-Apollo-Project/pull/1740).
+
+**Proposed reusable semantic rule:** Closing and reopening a menu must never
+change a button's authored *idle* background into a colored "special button"
+wash. The final painted face must follow the actual intended semantic state,
+not a stale hover, focus, press, ListView reuse or leftover compositing layer.
+An open/selected control must still retain its deliberately selected fill,
+text and glow; a genuinely hovered control may retain its defined hover
+treatment. Do not erase an intended state just to suppress an unintended wash.
+
+**Reference correction and scope:**
+
+- Clock → Angels corrected the final surface separately from generalized
+  `ActionButton` hover/press/keyboard fill dispatch. The design now uses
+  a deterministic opaque face: either its intentionally stable category
+  wash or a selected yellow face, with an explicit opt-in for controls that
+  actually represent an *open* view. Favorited status alone is not an open
+  navigation state.
+- Angels also identified that a `RectangularShadow` is a filled tinting
+  effect, not an outline-only glow. A broad halo can appear as a false button
+  background after scrolling or recomposition. Its repair disabled broad
+  button/wide glows locally while keeping glyph glow.
+- The Favorites++ version keeps black idle / yellow selected filters, preserves
+  source-specific colored icon identities, and retains its separate
+  yellow/orange true-hover and yellow/magenta selected saved-item rows.
+  It uses explicit opaque fill plus outline-only and glyph-local effects.
+- **Exception:** Angels observation rows deliberately have a stable category
+  wash. Other specialized widgets may also intentionally use broad halos.
+  This proposal is **not** permission to strip every broad glow or force all
+  widgets to black.
+
+**Verification gate:** Reproduce **open → close → reopen** with the same
+control state, then assert inactive and selected faces independently, inspect
+hover after re-entry and check the glyph/halo composition. Source-only tests
+do not certify Qt compositor behavior or operator visual acceptance. Source
+implementation, numeric recipes and native regression harness belong to
+[Post-Apollo technical visual-language recipes](https://github.com/kudokudo1/The-Post-Apollo-Project/blob/main/MODEL/components/visual-language-recipes.md),
+not this semantic rule register.
+
+**Rule identity:** Owner // Syntagma OPERATE, icon/symbol/interaction grammar;
+relation // extends 8.0 source-aligned glow and 8.0/8.1 layer independence,
+does not supersede intended selected or hover rules; verification //
+Angels historical correction checked, Favorites++ new CI/desktop acceptance
+to be recorded in its owning repository.
+
 ### 8.1 // RELATIONAL COLOR CLASSIFICATION
 
 Color identifies a **relationship in context**, not a fixed noun, selector depth, or obligation that adjacent buttons differ. First classify the referent, scope (whole, subsystem, action, display), emphasized relationship, persistence through interaction, and established precedent. Related terms need not share colors; different controls expressing the same relationship may share them.
