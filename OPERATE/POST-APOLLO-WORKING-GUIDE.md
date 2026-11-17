@@ -59,6 +59,8 @@ Choose existing **DockButton, ActionButton, ModeButton, SelectorDial, SelectorSl
 
 Consult the [Post-Apollo visual/icon grammar](./POST-APOLLO-ICON-GRAMMAR.md) and [dock/widget composition](./CONTROL-SURFACES.md#post-apollo--dock-and-widget-composition) **before asking the operator to decide an established rule again**. Inspect the live implementation, component-specific API, runtime history and any owner exceptions; do not invent new policy from a component name or a parent color.
 
+For scrolling panes and proportional indicators, use the [scroll viewport and track ownership contract](./SCROLL-VIEWPORT-CONTRACT.md). Allocate list/detail space first; the track follows its own viewport, never the unrelated part of a split panel. This contract is staged for review and does not authorize blanket migration.
+
 ## 3 // SCOPE EXPANSION MUST BE REPORTED
 
 If a requested local fix exposes a broader problem in:
