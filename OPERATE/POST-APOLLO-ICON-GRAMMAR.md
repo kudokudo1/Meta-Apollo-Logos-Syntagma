@@ -148,7 +148,7 @@ A non-clickable **running-hunt status title** remains a separate pending design 
 - Intentional **warning / attention / exclamation-sign artwork** in AppControl should use the exact text-style `⚠︎`, including places where different exclamation glyphs currently appear in one menu.
 - **Ordinary sentence-ending `!` is allowed**, including `Run Command, Run!` and `All Your Favorites!`. This later operator clarification **supersedes** an earlier overly broad "replace all visible !" transcription.
 - Do not rewrite QML logical `!`, shell/Python syntax, data, logs or third-party strings in pursuit of a visual sign rule.
-- `×` (U+00D7) is approved for **both Close/Dismiss and Remove-from-list**. Neither meaning forces generic `×` into the intentionally gun-themed AppControl Close Tab action.
+- `×` (U+00D7) is approved for **both Close/Dismiss and Remove-from-list**. In the newly expanded red-button family, an ordinary **Close/Dismiss** control takes the red exit-action identity; an `×` that only removes an item from a list remains contextual rather than automatically red. Neither meaning forces generic `×` into the intentionally gun-themed AppControl Close Tab action.
 - A shared operation name does not justify flattening its contextual visual identity. Examples: GitHub Library versus Files; Flatpak selector versus launch action; action face versus volume status face.
 
 ## 8 // COLOR AND INTERACTION ARE INDEPENDENT AXES
@@ -214,10 +214,12 @@ These are **relational defaults**, not exclusive assignments of nouns to hex val
 | Orange/Yellow | agency family: active operation, energy/heat, user intervention; yellow may express limiting, secondary or adjacent agency |
 | Omnitrix/sub-Omnitrix green | systems, audio/screens, automation, AI and confirmation through existing specific family recipes; do not flatten layered green glows |
 | Magenta | focus, meaningful selection, expression, human/personal choice, or established specialized identity |
-| Red | destructive/critical action, danger, actual error, extreme telemetry or explicit high-consequence identity |
+| Red | destructive/critical action, danger, actual error, extreme telemetry, explicit high-consequence identity, **and the Back / Close / Cancel exit-action family** |
 | Dark/Black | related structural/chassis treatments, not competing foreground identities |
 
-Precedent and real-world associations matter. Kill's destructive red is not freely assignable to unrelated nearby actions. Thermal heat may be orange while Kill remains red. Domain growth, renaming and icon changes do not automatically erase persistent identity.
+**Operator-approved red-button expansion (2026-11-19):** Ordinary **BACK**, **CLOSE / DISMISS**, and **CANCEL** buttons belong to the red action family alongside its existing destructive/critical uses. These three actions express leaving, reversing navigation, or declining the current interaction, **not** necessarily danger or destruction. Red is the semantic identity for the button; its normal hover, selected, pressed, foreground, border and glow layers remain independent unless a specific widget recipe says otherwise. A red Back, Close or Cancel button must **not** be given `destructive: true`, permanent deletion authority, a stronger confirmation requirement or a destructive animation merely because of its color. Preserve any explicitly established specialist icon/color recipe or operator-approved exception; this is a classification change, not authorization for an automatic UI-wide rewrite.
+
+Precedent and real-world associations matter. Kill's destructive red is not freely assignable to unrelated nearby actions outside this newly approved exit-action family. Thermal heat may be orange while Kill remains red. Domain growth, renaming and icon changes do not automatically erase persistent identity.
 
 **Cross-layer example:** audio subsystem controls may use Omnitrix-green identity and a distinct magenta interaction glow. Music may have its own cyan/magenta personal, authored, ongoing-signal identity, including when paused; it need not inherit the broader audio-system green. Exact media allocations remain under their specific contracts.
 
